@@ -10,7 +10,7 @@ import toshiba from "../logos/toshiba.png"
 
 const BrandCarausel = () => {
   return (
-  <div className='flex p-4 justify-between overflow-hidden shadow-md'>
+  <div className='flex p-4 justify-between overflow-x-auto shadow-md'>
       <div className="flex-col relative float-center  w-full" >
       <img
         src={apple}

@@ -1,8 +1,17 @@
 const router = require('express').Router();
 const data = require('./productdata');
 
-router.get("/" ,(req,res)=>{
-    res.send(data);
+router.get("/" ,async(req,res)=>{
+    try {
+        res.status(200).json({
+          product:data
+        });
+      } catch (err) {
+        res.status(400).json({
+          message: "Some error occured",
+          err
+        });
+      }
 })
 
 module.exports = router;

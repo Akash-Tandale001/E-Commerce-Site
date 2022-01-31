@@ -8,8 +8,7 @@ import Home from './pages/Home';
 
 
 function App() {
-  return (
-    
+  return (    
       <BrowserRouter>
       <Navbar />
       <Routes>
@@ -19,8 +18,7 @@ function App() {
       <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
-      </BrowserRouter>
-      
+      </BrowserRouter>      
   );
 }
 
