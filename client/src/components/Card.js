@@ -36,13 +36,13 @@ const Card = ({value}) => {
 
     }
     
-
+    // justify-between
   return (
   <div>
-      <div className="flex justify-start m-4 ">
-          <div className="flex flex-row md:flex-row  md:max-w-xl rounded-lg bg-white shadow-lg border-4">          
-            <img src={value.imageurl} width="150px" key={value.id} alt="..." />
-            <div className="p-6 w-80 h-40 flex flex-col justify-start">
+      <div className="flex justify-center m-4  max-w-md ">
+          <div className="flex flex-row   rounded-lg bg-white shadow-lg border-4">          
+            <img src={value.imageurl} className='max-w-md' key={value.id} alt="..." />
+            <div className="p-6 flex flex-col justify-center max-w-xl   ">
               <h5 className="text-gray-900 text-xl font-medium mb-2">
                 {value.name}
               </h5>

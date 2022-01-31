@@ -49,7 +49,7 @@ const Footer = () => {
                         <div>
                             <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
                             <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+19123456789</span>
-                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">proakash@email.com</span>
+                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">pro@email.com</span>
                         </div>
                     </div>
                 </div>

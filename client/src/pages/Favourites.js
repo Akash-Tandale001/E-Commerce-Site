@@ -36,7 +36,7 @@ const removefav=(idd)=>{
                    <div className='p-4 m-4 items-center h-90% border-8 shadow-md rounded max-w-80% max-h-80%'>
                 <div className="flex-row justify-center">
                 <div className="flex flex-row w-50% justify-between  p-6 rounded-lg shadow-lg bg-white ">
-                <i className="fas fa-trash p-4" onClick={()=>removefav(value.id)}></i>
+                <i className="fas fa-trash p-4 cursor-pointer" onClick={()=>removefav(value.id)}></i>
                     <h5 className="text-gray-900 p-4 text-xl leading-tight font-medium mb-2">{value.name}</h5>
                     <p className="text-gray-700 px-60 text-2xl mb-4">{ value.price}
                     </p>
