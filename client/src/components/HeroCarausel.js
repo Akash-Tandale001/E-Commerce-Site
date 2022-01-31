@@ -1,6 +1,7 @@
 import React from "react"
 import b1 from "../banner/1.jpg"
 import b2 from "../banner/2.jpg"
+import b3 from "../banner/3.jpg"
 
 const HeroCarausel = () => {
   return (
@@ -15,21 +16,28 @@ const HeroCarausel = () => {
             <img
               src="https://images.unsplash.com/photo-1546027658-7aa750153465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               className="block w-full h-80"
-              alt="Wild Landscape"
+              alt="..."
             />
           </div>
           <div className="carousel-item relative float-left w-full">
             <img
               src={b1}
               className="block w-full h-80"
-              alt="Camera"
+              alt="..."
             />
           </div>
           <div className="carousel-item relative float-left w-full">
             <img
               src={b2}
               className="block w-full h-80"
-              alt="Exotic Fruits"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item relative float-left w-full">
+            <img
+              src={b3}
+              className="block w-full h-80"
+              alt="..."
             />
           </div>
         </div>
