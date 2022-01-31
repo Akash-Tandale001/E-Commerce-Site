@@ -6,56 +6,56 @@ import Card from "./Card";
 const ProductCard = () => {
   const [data, setData] = useState([
     {
-      id: 2,
+      id: 1,
       name: "Realme 9 Pro 5G",
       price: "₹21,999",
       imageurl:
         "https://cdn1.smartprix.com/rx-iaT7eU4cX-w103-h125/vivo-v23-5g.webp",
     },
     {
-      id: 3,
+      id: 2,
       name: "Motorola Edge 20 Fusion 5G",
       price: "₹10,849",
       imageurl:
         "https://cdn1.smartprix.com/rx-i7fRbOBuW-w103-h125/samsung-galaxy-m52-5.webp",
     },
     {
-      id: 2,
+      id: 3,
       name: "Realme 9 Pro 5G",
       price: "₹21,999",
       imageurl:
         "https://cdn1.smartprix.com/rx-iaT7eU4cX-w103-h125/vivo-v23-5g.webp",
     },
     {
-      id: 3,
+      id: 4,
       name: "Motorola Edge 20 Fusion 5G",
       price: "₹10,849",
       imageurl:
         "https://cdn1.smartprix.com/rx-i7fRbOBuW-w103-h125/samsung-galaxy-m52-5.webp",
     },
     {
-      id: 2,
+      id: 5,
       name: "Realme 9 Pro 5G",
       price: "₹21,999",
       imageurl:
         "https://cdn1.smartprix.com/rx-iaT7eU4cX-w103-h125/vivo-v23-5g.webp",
     },
     {
-      id: 3,
+      id: 6,
       name: "Motorola Edge 20 Fusion 5G",
       price: "₹10,849",
       imageurl:
         "https://cdn1.smartprix.com/rx-i7fRbOBuW-w103-h125/samsung-galaxy-m52-5.webp",
     },
     {
-      id: 2,
+      id: 7,
       name: "Realme 9 Pro 5G",
       price: "₹21,999",
       imageurl:
         "https://cdn1.smartprix.com/rx-iaT7eU4cX-w103-h125/vivo-v23-5g.webp",
     },
     {
-      id: 3,
+      id: 8,
       name: "Motorola Edge 20 Fusion 5G",
       price: "₹10,849",
       imageurl:

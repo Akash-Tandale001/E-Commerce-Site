@@ -19,7 +19,7 @@ const Card = ({value}) => {
                 price :value.price
             })
           );
-          alert("Your "+value.name+" is added to cart .");
+          alert("Your "+value.name+" is added to cart succesfully .");
 
     }
     const addfav=()=>{
@@ -32,7 +32,7 @@ const Card = ({value}) => {
                 price :value.price
             })
           );
-          alert("Your "+value.name+" is added to Favourite section .");
+          alert("Your "+value.name+" is added to Favourite section succesfully .");
 
     }
     

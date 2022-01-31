@@ -23,5 +23,5 @@ const cartSlice = createSlice({
 });
 
 export const {saveitem ,deleteitem} = cartSlice.actions
-export const selectitemList = state => state.item.itemList
+export const selectitemList = state => state.carts.itemList
 export default cartSlice.reducer
