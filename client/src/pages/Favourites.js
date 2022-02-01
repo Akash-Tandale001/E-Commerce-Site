@@ -18,14 +18,9 @@ const Favourites = () => {
       alert("Your "+product+" is added to cart succesfully .");
 
 }
-const removefav=(idd)=>{
-  dispatch(
-    deletefav({
-          id:idd
-      })
-    );
-    alert("Item removed to cart succesfully .");
-
+const removefav=(id)=>{
+  dispatch(deletefav(id));
+    alert("Item removed from favourite section succesfully .");
 }
   return (
     <>

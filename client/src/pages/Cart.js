@@ -6,11 +6,9 @@ import { deleteitem } from '../reducer/cartSlice';
 
 const Cart = () => {       
     const dispatch = useDispatch();
-    const removeitem=(idd)=>{
+    const removeitem=(id)=>{
           dispatch(
-            deleteitem({
-                  id:idd
-              })
+            deleteitem(id)
             );
             alert("Item removed to cart succesfully .");
       

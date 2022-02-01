@@ -39,7 +39,7 @@ const Card = ({value}) => {
     // justify-between
   return (
   <div>
-      <div className="flex justify-center m-4  max-w-md ">
+      <div className="flex justify-center m-4  max-w-md hover:shadow-xl ">
           <div className="flex flex-row   rounded-lg bg-white shadow-lg border-4">          
             <img src={value.imageurl} className='max-w-md' key={value.id} alt="..." />
             <div className="p-6 flex flex-col justify-center max-w-xl   ">

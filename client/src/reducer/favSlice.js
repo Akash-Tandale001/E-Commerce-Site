@@ -16,7 +16,7 @@ const favSlice = createSlice({
         deletefav:(state ,action)=>{
             const index=state.favList.findIndex((item)=> item.id === action.payload);
             if (index > -1) {
-                state.todoList.splice(index, 1);
+                state.favList.splice(index, 1);
               }
         }    
     }

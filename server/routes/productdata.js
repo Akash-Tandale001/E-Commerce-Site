@@ -1,5 +1,5 @@
-const data = {
-  mobile:[
+const data = [
+  
     {
       id: 1,
       name: "Xiaomi Redmi Note 11 Pro 5G",
@@ -121,6 +121,6 @@ const data = {
       imageurl: "https://cdn1.smartprix.com/rx-ipwp512CM-w103-h125/oneplus-nord-2-5g.webp"
     }
   ]
-};
+;
 
 module.exports = data;
