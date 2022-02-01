@@ -5,126 +5,59 @@ import Card from "./Card";
 
 const ProductCard = () => {
   const [data, setData] = useState([
-  
     {
-      id: 1,
-      name: "Xiaomi Redmi Note 11 Pro 5G",
-      price: "₹14,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iZ2OnDJ0m-w103-h125/vivo-y75-5g.webp"
+      id: "1",
+      name: "Samsung Galaxy A72 (8 GB RAM, 128 GB Storage, Awesome Violet)",
+      price: "₹ 30,990",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/9b5ca29e-8a44-4054-89fd-ce56dc3fee1d_182x182.jpg"
     },
     {
-      id: 2,
-      name: "Realme 9 Pro 5G",
-      price: "₹21,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iaT7eU4cX-w103-h125/vivo-v23-5g.webp"
+      id: "2",
+      name: "Samsung Galaxy A72 (8 GB RAM, 128 GB Storage, Awesome Blue)",
+      price: "₹ 30,990",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/78b6ebcf-64f5-4636-b08f-9fc77fde1071_182x182.jpg"
     },
     {
-      id: 3,
-      name: "Motorola Edge 20 Fusion 5G",
-      price: "₹10,849",
-      imageurl: "https://cdn1.smartprix.com/rx-i7fRbOBuW-w103-h125/samsung-galaxy-m52-5.webp"
+      id: "3",
+      name: "Samsung Galaxy A72 (8 GB RAM, 128 GB Storage, Awesome Black)",
+      price: "₹ 30,990",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/de65f78b-04bf-491f-9b0c-2ff5dcc5a4a0_182x182.jpg"
     },
     {
-      id: 4,
-      name: "OnePlus 10 Pro 5G",
-      price: "₹15,999",
-      imageurl: "https://cdn1.smartprix.com/rx-i12zNEf4d-w103-h125/micromax-in-note-2.webp"
+      id: "4",
+      name: "Apple iPhone 11 (64 GB, White)",
+      price: "₹ 49,900",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/f94bc463-12d4-4489-aef4-a345105f87dd_182x182.jpg"
     },
     {
-      id: 5,
-      name: "Realme 9i",
-      price: "₹54,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iPuDGW3gh-w103-h125/realme-9i.webp"
+      id: "5",
+      name: "Vivo V21 5G (8 GB RAM, 128 GB Storage, Sunset Dazzle)",
+      price: "₹ 29,990",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/4b3371ff-b7e5-486b-836d-97b87b5aa29a_182x182.jpg"
     },
     {
-      id: 6,
-      name: "Xiaomi Redmi Note 11T 5G (6GB RAM + 128GB)",
-      price: "₹24,999",
-      imageurl: "https://cdn1.smartprix.com/rx-i5vdJNNss-w103-h125/oneplus-10-pro-5g.webp"
+      id: "6",
+      name: "Vivo V21E 5G Mobile (8 GB ,128 GB, Dark Pearl)",
+      price: "₹ 24,990",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/cbadcc76-6c9f-4806-a47c-f7a0f64ee2c4_182x182.jpg"
     },
     {
-      id: 7,
-      name: "Micromax IN Note 2",
-      price: "₹13,999",
-      imageurl: "https://cdn1.smartprix.com/rx-i1ayUkol5-w103-h125/xiaomi-redmi-note-11.webp"
+      id: "7",
+      name: "Samsung A22 (6 GB, 128 GB, Black)",
+      price: "₹ 18,499",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/32f472b9-ee5e-4e71-9239-658e78cb631b_182x182.jpg"
     },
     {
-      id: 8,
-      name: "Samsung Galaxy M52 5G",
-      price: "₹21,990",
-      imageurl: "https://cdn1.smartprix.com/rx-iZcN93pOS-w103-h125/realme-9-pro-5g-8gb.webp"
+      id: "8",
+      name: "Samsung A22 5G (6 GB RAM, 128 GB ROM, Gray)",
+      price: "₹ 19,999",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/874160e7-d432-459f-a443-404901a1eda1_182x182.png"
     },
     {
-      id: 9,
-      name: "Vivo V23 5G",
-      price: "₹26,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iBS9UxSZw-w103-h125/xiaomi-redmi-note-11.webp"
-    },
-    {
-      id: 10,
-      name: "Samsung Galaxy F42 5G",
-      price: "₹29,695",
-      imageurl: "https://cdn1.smartprix.com/rx-iZcN93pOS-w103-h125/realme-9-pro-5g-8gb.webp"
-    },
-    {
-      id: 11,
-      name: "Xiaomi Redmi Note 11 Pro Max 5G",
-      price: "₹19,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iBS9UxSZw-w103-h125/xiaomi-redmi-note-11.webp"
-    },
-    {
-      id: 12,
-      name: "Xiaomi 11i HyperCharge 5G",
-      price: "₹17,999",
-      imageurl: "https://cdn1.smartprix.com/rx-i0jH5rhsG-w103-h125/realme-9i-6gb-ram-12.webp"
-    },
-    {
-      id: 13,
-      name: "Realme 9 Pro 5G (8GB RAM + 128GB)",
-      price: "₹29,990",
-      imageurl: "https://cdn1.smartprix.com/rx-iLK9d6U92-w103-h125/xiaomi-redmi-note-11.webp"
-    },
-    {
-      id: 14,
-      name: "Xiaomi Redmi Note 11S",
-      price: "₹13,499",
-      imageurl: "https://cdn1.smartprix.com/rx-i0V5qevwP-w103-h125/realme-9-pro-plus-5g.webp"
-    },
-    {
-      id: 15,
-      name: "Realme 9 Pro Plus 5G",
-      price: "₹20,499",
-      imageurl: "https://cdn1.smartprix.com/rx-izthhEdsG-w103-h125/xiaomi-redmi-note-11.webp"
-    },
-    {
-      id: 16,
-      name: "Samsung Galaxy M12",
-      price: "₹15,990",
-      imageurl: "https://cdn1.smartprix.com/rx-ib4ZdFtpX-w103-h125/xiaomi-redmi-note-10.webp"
-    },
-    {
-      id: 17,
-      name: "Xiaomi Redmi Note 10S",
-      price: "₹15,999",
-      imageurl: "https://cdn1.smartprix.com/rx-i1UhDu8Tu-w103-h125/samsung-galaxy-f42-5.webp"
-    },
-    {
-      id: 18,
-      name: "Realme 9i (6GB RAM + 128GB)",
-      price: "₹15,990",
-      imageurl: "https://cdn1.smartprix.com/rx-iEOT0mfEU-w103-h125/motorola-edge-20-fus.webp"
-    },
-    {
-      id: 19,
-      name: "OnePlus Nord 2 5G",
-      price: "₹15,999",
-      imageurl: "https://cdn1.smartprix.com/rx-iacyQazev-w103-h125/xiaomi-11i-hyperchar.webp"
-    },
-    {
-      id: 20,
-      name: "Vivo Y75 5G",
-      price: "₹15,999",
-      imageurl: "https://cdn1.smartprix.com/rx-ipwp512CM-w103-h125/oneplus-nord-2-5g.webp"
+      id: "9",
+      name: "Samsung A22 5G (8 GB RAM, 128 GB ROM, Gray)",
+      price: "₹ 21,999",
+      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/65013798-5c87-4029-8fd9-1572599896b0_182x182.jpg"
     }
   ]);
 
