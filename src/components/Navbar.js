@@ -43,6 +43,11 @@ const Navbar = () => {
               >
                 Laptops
               </Link>
+              <Link to="/entertainment"
+                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-white hover:text-gray-300  transition-colors duration-200 transform rounded-md md:mt-0 0 "
+              >
+                Entertainment
+              </Link>
             </div>
 
             <div className="flex items-center mt-4 md:mt-0">
