@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className="flex md:hidden">
               <button
                 type="button"
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                 aria-label="toggle menu"
               >
                 <i class="fas fa-ellipsis-h"></i>
@@ -29,28 +29,28 @@ const Navbar = () => {
           <div className="flex-1 md:flex md:items-center md:justify-between">
             <div className="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
               <Link to="/"
-                className="px-2 py-1 mx-2 mt-2 text-md font-medium hover:text-gray-300 text-white transition-colors duration-200 transform rounded-md md:mt-0   "
+                className="px-2 py-1 text-gray-800 mx-2 mt-2 text-md font-medium dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0   "
               >
                Home
               </Link>
               
               <Link to="/mobiles"
-                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-white hover:text-gray-300  transition-colors duration-200 transform rounded-md md:mt-0 0 "
+                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300 hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Mobiles
               </Link>
               <Link to="/laptops"
-                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-white hover:text-gray-300  transition-colors duration-200 transform rounded-md md:mt-0 0 "
+                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Laptops
               </Link>
               <Link to="/entertainment"
-                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-white hover:text-gray-300  transition-colors duration-200 transform rounded-md md:mt-0 0 "
+                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Entertainment
               </Link>
               <Link to="/about"
-                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-white hover:text-gray-300  transition-colors duration-200 transform rounded-md md:mt-0 0 "
+                className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 About
               </Link>
