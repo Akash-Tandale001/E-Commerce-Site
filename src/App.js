@@ -7,6 +7,7 @@ import Discount from "./pages/Discount";
 import Entertainment from "./pages/Entertainment";
 import Favourites from "./pages/Favourites";
 import Home from './pages/Home';
+import Mobiles from "./pages/Mobiles";
 
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
       <Route path="/favourites" element={<Favourites />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/about" element={<About />} />
-      <Route path="/discount" element={<Discount />} />
+      <Route path="/laptops" element={<Discount />} />
       <Route path="/entertainment" element={<Entertainment />} />
+      <Route path="/mobiles" element={<Mobiles />} />
       </Routes>
       <Footer />
       </BrowserRouter>      
