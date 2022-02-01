@@ -39,10 +39,10 @@ const Card = ({value}) => {
     // justify-between
   return (
   <div>
-      <div className="flex justify-center m-4  max-w-md hover:shadow-xl ">
+      <div className="flex justify-center m-4 hover:shadow-xl max-w-sm max-h-md">
           <div className="flex flex-row   rounded-lg bg-white shadow-lg border-4">          
-            <img src={value.imageurl} className='max-w-md' key={value.id} alt="..." />
-            <div className="p-6 flex flex-col justify-center max-w-xl   ">
+            <img src={value.imageurl} className='w-sm h-sm' key={value.id} alt="..." />
+            <div className="p-6 flex flex-col justify-center    ">
               <h5 className="text-gray-900 text-xl font-medium mb-2">
                 {value.name}
               </h5>
@@ -57,10 +57,10 @@ const Card = ({value}) => {
                   {value.price}
                 </h1>
                 <button className="px-2 py-1 mb-2 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded  hover:bg-gray-700  focus:outline-none focus:bg-gray-700 " onClick={()=>addfav()}>
-                  Add to Favourite
+                <i class="far fa-heart"></i> Add to Favourite
                 </button>
                 <button className="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded  hover:bg-gray-700  focus:outline-none focus:bg-gray-700 " onClick={()=>addcart()}>
-                  Add to Cart
+                <i class="fal fa-shopping-cart"></i> Add to Cart
                 </button>
               </div>
             </div>
