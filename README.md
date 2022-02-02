@@ -3,3 +3,4 @@
 - ReactJs
 - Redux
 - NodeJs
+- Tailwind css
