@@ -21,7 +21,7 @@ const Navbar = () => {
                 className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                 aria-label="toggle menu"
               >
-                <i class="fas fa-ellipsis-h"></i>
+                <i className="fas fa-ellipsis-h"></i>
               </button>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className="flex items-center mt-4 md:mt-0">
               <input
                 type="text"
-                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 hidden dark:border-gray-600 focus:border-blue-300 dark:focus:border-blue-300 focus:outline-none  focus:ring-opacity-40 focus:ring-blue-300"
+                className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 hidden dark:border-gray-600 focus:border-blue-300 dark:focus:border-blue-300 focus:outline-none  focus:ring-opacity-40 focus:ring-blue-300"
                 placeholder="Search"
               />
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                   className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"
                 >
-                  <i class="far fa-heart cursor-pointer"></i>
+                  <i className="far fa-heart cursor-pointer"></i>
                 </button>
               </Link>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
                   className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"
                 >
-                  <i class="fab fa-opencart cursor-pointer"></i>
+                  <i className="fab fa-opencart cursor-pointer"></i>
                 </button>
               </Link>
             </div>

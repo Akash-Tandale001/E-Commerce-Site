@@ -39,28 +39,28 @@ const Card = ({value}) => {
     // justify-between
   return (
   <div>
-      <div className="flex justify-center m-4 hover:shadow-xl max-w-sm max-h-md">
+      <div className="flex justify-center m-4 hover:shadow-xl max-w-sm max-h-sm">
           <div className="flex flex-row   rounded-lg bg-white shadow-lg border-4">          
-            <img src={value.imageurl} className='w-sm h-sm' key={value.id} alt="..." />
+            <img src={value.imageurl} className='w-sm h-sm' style={{height:"10rem"}} key={value.id} alt="..." />
             <div className="p-6 flex flex-col justify-center    ">
               <h5 className="text-gray-900 text-xl font-medium mb-2">
                 {value.name}
               </h5>
               <div>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half"></i></div>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star-half"></i></div>
               <div className="flex flex-col justify-between  item-center">
               
                 <h1 className="text-lg font-bold text-gray-700  md:text-xl">
                   {value.price}
                 </h1>
                 <button className="px-2 py-1 mb-2 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded  hover:bg-gray-700  focus:outline-none focus:bg-gray-700 " onClick={()=>addfav()}>
-                <i class="far fa-heart"></i> Add to Favourite
+                <i className="far fa-heart"></i> Add to Favourite
                 </button>
                 <button className="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded  hover:bg-gray-700  focus:outline-none focus:bg-gray-700 " onClick={()=>addcart()}>
-                <i class="fal fa-shopping-cart"></i> Add to Cart
+                <i className="fal fa-shopping-cart"></i> Add to Cart
                 </button>
               </div>
             </div>
