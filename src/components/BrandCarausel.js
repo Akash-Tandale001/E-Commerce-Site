@@ -15,56 +15,56 @@ const BrandCarausel = () => {
       <img
         src={apple}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Wild Landscape"
+        alt=".."
       />
     </div>
     <div className=" relative float-center w-full">
       <img
         src={blackberry}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Camera"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={samsung}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={nokia}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={virgin}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={htc}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={sony}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
     <div className="relative float-center w-full">
       <img
         src={toshiba}
         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="Exotic Fruits"
+        alt="..."
       />
     </div>
 
