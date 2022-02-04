@@ -27,6 +27,7 @@ const Cart = () => {
                     className="fas fa-trash p-4 cursor-pointer"
                     onClick={() => removeitem(value.id)}
                   ></i>
+                   <img src={value.imageurl} style={{height:"5rem"}} alt="..."/>
                   <h5 className="text-gray-900 p-4 text-xl font-medium mb-2">
                     {value.name}
                   </h5>

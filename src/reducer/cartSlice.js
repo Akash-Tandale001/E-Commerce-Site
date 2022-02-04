@@ -18,6 +18,7 @@ const cartSlice = createSlice({
             if (index > -1) {
                 state.itemList.splice(index, 1);
               }
+            //   state.itemList.filter((item)=>item.id!=action.payload.id);
         }    
     }
 });

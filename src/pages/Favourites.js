@@ -6,16 +6,16 @@ import { saveitem } from "../reducer/cartSlice";
 const Favourites = () => {
   const favlist = useSelector(selectfavList);
   const dispatch = useDispatch();
-  const addcart = (idd, product, url, cost) => {
+  const addcart = (id, name, imageurl, price) => {
     dispatch(
       saveitem({
-        id: idd,
-        name: product,
-        imageurl: url,
-        price: cost,
+        id,
+        name,
+        imageurl,
+        price
       })
     );
-    alert("Your " + product + " is added to cart succesfully .");
+    alert("Your " + name + " is added to cart succesfully .");
   };
   const removefav = (id) => {
     dispatch(deletefav(id));
@@ -37,6 +37,7 @@ const Favourites = () => {
                     className="fas fa-trash p-4 cursor-pointer"
                     onClick={() => removefav(value.id)}
                   ></i>
+                  <img src={value.imageurl} style={{height:"5rem"}} alt="..."/>
                   <h5 className="text-gray-900 p-4 text-xl font-medium mb-2">
                     {value.name}
                   </h5>
