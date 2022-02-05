@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow dark:bg-gray-800">
+    <nav className="bg-white shadow dark:bg-gray-800 container-fluid">
       <div className="container px-6 py-4 mx-auto">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex items-center justify-between">
@@ -11,22 +11,23 @@ const Navbar = () => {
               <p
                 className="text-xl  text-gray-800 transition-colors duration-200 transform dark:text-white  hover:text-gray-700 dark:hover:text-gray-300"                
               >
-                <i className="fas fa-angle-double-right cursor-pointer">Product Catelog</i>
+                <i className="fas fa-angle-double-right cursor-pointer" >Product Catelog</i>
               </p>
             </div>
 
             <div className="flex md:hidden">
               <button
                 type="button"
-                className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
-                aria-label="toggle menu"
+                className="navbar-toggler items-center text-gray-200 hover:text-gray-400 focus:outline-none  focus:text-gray-400"
+                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
               >
-                <i className="fas fa-ellipsis-h"></i>
+                <i className="fas fa-ellipsis-h" aria-hidden="false"></i>
               </button>
             </div>
           </div>
 
-          <div className="flex-1 md:flex md:items-center md:justify-between">
+          <div className="flex-1 md:flex md:items-center md:justify-between" id="navbarSupportedContent">
             <div className="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
               <Link to="/"
                 className="px-2 py-1 text-gray-800 mx-2 mt-2 text-md font-medium dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0   "
