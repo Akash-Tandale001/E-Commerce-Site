@@ -44,9 +44,10 @@ const data =
     },
     {
       id: "8",
-      name: "Samsung A22 5G (6 GB RAM, 128 GB ROM, Gray)",
-      price: "₹ 19,999",
-      imageurl: "https://d2xamzlzrdbdbn.cloudfront.net/products/874160e7-d432-459f-a443-404901a1eda1_182x182.png"
+      name: "Vivo Y73 (8 GB, 128 GB, Diamond Flare)",
+      price: "₹ 20,990",
+      imageurl:
+        "https://d2xamzlzrdbdbn.cloudfront.net/products/2882a1f7-fbf5-4aa8-91cf-08f3dba83be1_182x182.jpg",
     },
     {
       id: "9",
