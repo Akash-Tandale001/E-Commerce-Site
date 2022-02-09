@@ -5,7 +5,7 @@ import { saveitem } from "../reducer/cartSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const Favourites = () => {
-  const favlist = useSelector(selectfavList);
+  let favlist = useSelector(selectfavList);
   const dispatch = useDispatch();
   const addcart = (id, name, imageurl, price) => {
     dispatch(
