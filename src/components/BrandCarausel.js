@@ -1,73 +1,220 @@
 import React from 'react';
-import apple from "../logos/apple.png"
-import blackberry from "../logos/blackberry.png"
-import htc from "../logos/htc.png"
-import nokia from "../logos/nokia-1.png"
-import samsung from "../logos/samsung.png"
-import virgin from "../logos/virgin.png"
-import sony from "../logos/sony.png"
-import toshiba from "../logos/toshiba.png"
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import b1 from "../logos/1.png";
+import b2 from "../logos/2.png";
+import b3 from "../logos/3.png";
+import b4 from "../logos/4.png";
+import b5 from "../logos/5.png";
+import b6 from "../logos/6.png";
+import b7 from "../logos/7.png";
+import b8 from "../logos/8.png";
+import b9 from "../logos/9.png";
+import b10 from "../logos/10.png";
+import b11 from "../logos/11.png";
+import b12 from "../logos/12.png";
+import b13 from "../logos/13.png";
+import b14 from "../logos/14.png";
+import b15 from "../logos/15.png";
+import b16 from "../logos/16.png";
+import b17 from "../logos/17.png";
+import b18 from "../logos/18.png";
+import b19 from "../logos/19.png";
+
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [
+  <img
+    src={b1}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b2}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b3}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b4}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b5}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b6}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b7}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b8}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b9}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b10}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b11}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b12}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b13}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b14}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b15}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b16}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+    src={b17}
+    style={{width:"120", height:"100px", objectFit: "cover" }}
+    alt="..."
+    onDragStart={handleDragStart}
+  />,
+  <img
+  src={b18}
+  style={{width:"120", height:"100px", objectFit: "cover" }}
+  alt="..."
+  onDragStart={handleDragStart}
+/>,
+ <img
+ src={b19}
+ style={{width:"120", height:"100px", objectFit: "cover" }}
+ alt="..."
+ onDragStart={handleDragStart}
+/>,
+];
 
 const BrandCarausel = () => {
   return (
-  <div className='flex flex-row p-4 overflow-x-auto  shadow-md '>
-      <div className="relative float-center  w-full" >
-      <img
-        src={apple}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt=".."
-      />
-    </div>
-    <div className=" relative float-center w-full">
-      <img
-        src={blackberry}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={samsung}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={nokia}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={virgin}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={htc}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={sony}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
-    <div className="relative float-center w-full">
-      <img
-        src={toshiba}
-        className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
-        alt="..."
-      />
-    </div>
+//   <div className='flex flex-row p-4 overflow-x-auto  shadow-md '>
+//       <div className="relative float-center  w-full" >
+//       <img
+//         src={apple}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt=".."
+//       />
+//     </div>
+//     <div className=" relative float-center w-full">
+//       <img
+//         src={blackberry}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={samsung}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={nokia}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={virgin}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={htc}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={sony}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
+//     <div className="relative float-center w-full">
+//       <img
+//         src={toshiba}
+//         className="block w-40 h-40 transform hover:translate-y-2 cursor-pointer"
+//         alt="..."
+//       />
+//     </div>
 
+// </div>
+
+
+<div style={{ width:"100%", height:"120px", objectFit: "cover" }}>
+<AliceCarousel
+  infinite
+  disableDotsControls
+  mouseTracking={true}
+  autoPlay
+  autoPlayInterval="1000"
+  items={items}
+  disableButtonsControls
+  touchTracking
+  paddingRight="1200"
+/>
 </div>
   
   );
