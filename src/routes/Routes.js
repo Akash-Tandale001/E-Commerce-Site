@@ -74,6 +74,11 @@ const components = {
 		name: "AdminDashBoard",
 		element: <AdminDashBoard />,
 	},
+	SignUp: {
+		path: "/signUp",
+		name: "SignUp",
+		element: <SignUp />,
+	},
 };
 const rolesConfig = {
 	Admin: {
@@ -89,7 +94,7 @@ const rolesConfig = {
             components.AdminDashBoard,
 		],
 	},
-	User: {
+	user: {
 		routes: [
             components.Home,
 			components.About,

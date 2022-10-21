@@ -30,28 +30,28 @@ const Navbar = () => {
 
           <div className="flex-1 md:flex md:items-center md:justify-between" id="navbarSupportedContent">
             <div className="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
-              <Link to="/"
+              <Link to="/base/home"
                 className="px-2 py-1 text-gray-800 mx-2 mt-2 text-md font-medium dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0   "
               >
                Home
               </Link>
               
-              <Link to="/mobiles"
+              <Link to="/base/mobiles"
                 className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300 hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Mobiles
               </Link>
-              <Link to="/laptops"
+              <Link to="/base/laptops"
                 className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Laptops
               </Link>
-              <Link to="/entertainment"
+              <Link to="/base/entertainment"
                 className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 Entertainment
               </Link>
-              <Link to="/about"
+              <Link to="/base/about"
                 className="px-2 py-1 mx-2 mt-2 text-md font-medium text-gray-800 dark:text-gray-300  hover:text-gray-200  transition-colors duration-200 transform rounded-md md:mt-0 0 "
               >
                 About
@@ -65,7 +65,7 @@ const Navbar = () => {
                 placeholder="Search"
               />
 
-              <Link to="/favourites">
+              <Link to="/base/favourites">
                 <button
                   className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"
@@ -74,7 +74,7 @@ const Navbar = () => {
                 </button>
               </Link>
 
-              <Link to="/cart">
+              <Link to="/base/cart">
                 <button
                   className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"
@@ -83,7 +83,7 @@ const Navbar = () => {
                 </button>
               </Link>
 
-              <Link to="/profile">
+              <Link to="/base/profile">
                 <button
                   className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"

@@ -6,13 +6,15 @@ import { authDetails } from "./reducer/authSlice";
 import { BasicRoutesConfig, rolesConfig } from "./routes/Routes";
 import { ADMIN, USER } from "./utils/Constant";
 import Layout from "./components/layout/Layout";
+import Home from "./pages/Home/Home";
 
 function App() {
-  const { isAuthenticated, userRole } = useSelector(authDetails);
+  const { isAuthenticated, userRole,token } = useSelector(state => state.authDetails);
+  console.log("App",{ isAuthenticated, userRole,token })
   let routes;
   if (isAuthenticated) {
     if (userRole === USER) {
-      routes = rolesConfig["User"];
+      routes = rolesConfig["user"];
     } else if (userRole === ADMIN) {
       routes = rolesConfig["Admin"];
     }
@@ -25,7 +27,7 @@ function App() {
         })}
 
         {isAuthenticated ? (
-          <Route element={<Layout />}>
+          <Route element={<Layout/>}>
             {routes.routes.map((route, key) => {
               return route ? <Route key={key} {...route} /> : null;
             })}
