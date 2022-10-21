@@ -1,9 +1,9 @@
 import React from "react"
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import b1 from "../banner/1.jpg"
-import b2 from "../banner/2.jpg"
-import b3 from "../banner/3.jpg"
+import b1 from "../../assets/banner/1.jpg"
+import b2 from "../../assets/banner/2.jpg"
+import b3 from "../../assets/banner/3.jpg"
 
 
 const handleDragStart = (e) => e.preventDefault();

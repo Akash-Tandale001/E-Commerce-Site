@@ -9,19 +9,19 @@ const Cart = () => {
     dispatch(deleteitem(id));
     alert("Item removed to cart succesfully .");
   };
+ const list = useSelector(selectitemList);
 
-  const itemlist = useSelector(selectitemList);
-  // const [totalcost , setTotalCost] = useState(0);
+  // const itemlist = list.length !== 0 ?  list : JSON.parse(sessionStorage.getItem("cartList"))||[];
   return (
     <>
       <div className="p-6 m-6 text-center font-bold text-4xl text-indigo-600 shadow-xl rounded  ">
          Cart Menu
       </div>
-      {itemlist.map((value) => {
+      {list.map((value) => {
         // setTotalCost((price)=>price+value.price);
         return (
           <>
-            <div className="p-4 m-4 items-center h-90% border-8 shadow-md rounded max-w-80% max-h-80%">
+            <div className="p-4 m-4 items-center h-90% border-8 shadow-md rounded max-w-80% max-h-80%" key={value.id}>
       
               <div className="flex flex-col md:flex-row w-50% justify-between  p-6 rounded-lg shadow-lg bg-white ">
                 <i

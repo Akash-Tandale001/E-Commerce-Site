@@ -1,30 +1,57 @@
-import { BrowserRouter, Routes,Route} from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar"
-import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Discount from "./pages/Discount";
-import Entertainment from "./pages/Entertainment";
-import Favourites from "./pages/Favourites";
-import Home from './pages/Home';
-import Mobiles from "./pages/Mobiles";
-
+import { Suspense } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Loader from "./helper/Loader";
+import { authDetails, saveAuth } from "./reducer/authSlice";
+import { BasicRoutesConfig, rolesConfig } from "./routes/Routes";
+import { ADMIN, USER } from "./utils/Constant";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home/Home";
 
 function App() {
-  return (    
-      <BrowserRouter>
-      <Navbar />
+  const { isAuthenticated, userRole,token } = useSelector(state => state.authDetails);
+  console.log("App",{ isAuthenticated, userRole,token })
+  const loginToken = sessionStorage.getItem("loginToken") && sessionStorage.getItem("isAuthenticated") && sessionStorage.getItem("userRole")
+  const dispatch = useDispatch;
+  const storeDetails =async()=>{
+    await dispatch(
+      saveAuth({
+        isAuthenticated : sessionStorage.getItem("loginToken"),
+        userRole : sessionStorage.getItem("userRole"),
+        token : sessionStorage.getItem("loginToken")
+      })
+    );
+  }
+  if(loginToken){  
+    storeDetails();
+  }
+
+  let routes;
+  if (isAuthenticated || sessionStorage.getItem("isAuthenticated")) {
+    if (userRole === USER || sessionStorage.getItem("userRole") === USER) {
+      routes = rolesConfig["user"];
+    } else if (userRole === ADMIN) {
+      routes = rolesConfig["Admin"];
+    }
+  }
+  return (
+    <Suspense fallback={<Loader />}>
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/favourites" element={<Favourites />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/laptops" element={<Discount />} />
-      <Route path="/entertainment" element={<Entertainment />} />
-      <Route path="/mobiles" element={<Mobiles />} />
+        {BasicRoutesConfig.map((route, key) => {
+          return route ? <Route key={key} {...route} /> : null;
+        })}
+
+        {isAuthenticated || loginToken ? (
+          <Route element={loginToken ? <Layout/> : <Home/>}>
+            {routes.routes.map((route, key) => {
+              return route ? <Route key={key} {...route} /> : null;
+            })}
+          </Route>
+        ) : (
+          <Route path="/base/*" element={<Navigate to="/" replace />} />
+        )}
       </Routes>
-      <Footer />
-      </BrowserRouter>      
+    </Suspense>
   );
 }
 

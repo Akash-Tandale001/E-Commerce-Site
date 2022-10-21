@@ -1,0 +1,45 @@
+.main{
+    display: flex;
+    justify-content: center;
+    .conteiner{
+        background-image: url("../../assets/image/background.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 50vw;
+        min-height: 100vh;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .loginContainer{
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2em;
+        gap: 2em;
+        .title{
+            font-size: 2em;
+            color: rgb(215, 204, 180);
+            text-align: center;
+            width: 80%;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+        .register{
+            color: rgb(105, 159, 241);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .inlineField{
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+        }
+        .btnContainer{
+            align-self: center;
+            
+        }
+        
+    }
+}

@@ -1,28 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    itemList:[]
-
-}
+  itemList: [],
+};
 
 const cartSlice = createSlice({
-    name: 'item',
-    initialState,
-    reducers: {
-        saveitem:(state , action)=>{
-            state.itemList.push(action.payload)
-        },
+  name: "item",
+  initialState,
+  reducers: {
+    saveitem: (state, action) => {
+      state.itemList.push(action.payload);
 
-        deleteitem:(state ,action)=>{
-            const index=state.itemList.findIndex((item)=> item.id === action.payload);
-            if (index > -1) {
-                state.itemList.splice(index, 1);
-              }
-            //   state.itemList.filter((item)=>item.id!=action.payload.id);
-        }    
-    }
+      const cartListItem = sessionStorage.getItem("cartList")
+        ? JSON.parse(sessionStorage.getItem("cartList"))
+        : [];
+      cartListItem.push({
+        id: action.payload.id,
+        imageurl: action.payload.imageurl,
+        name: action.payload.name,
+        price: action.payload.price,
+      });
+      sessionStorage.setItem("cartList", JSON.stringify(cartListItem));
+    },
+
+    deleteitem: (state, action) => {
+      const index = state.itemList.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index > -1) {
+        state.itemList.splice(index, 1);
+      }
+    },
+  },
 });
 
-export const {saveitem ,deleteitem} = cartSlice.actions
-export const selectitemList = state => state.carts.itemList
-export default cartSlice.reducer
+export const { saveitem, deleteitem } = cartSlice.actions;
+export const selectitemList = (state) => state.carts.itemList;
+export default cartSlice.reducer;
