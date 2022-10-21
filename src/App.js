@@ -1,30 +1,40 @@
-import { BrowserRouter, Routes,Route} from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar"
-import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Entertainment from "./pages/Entertainment";
-import Favourites from "./pages/Favourites";
-import Home from './pages/Home';
-import Laptops from "./pages/Laptops";
-import Mobiles from "./pages/Mobiles";
-
+import { Suspense } from "react";
+import { useSelector } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Loader from "./helper/Loader";
+import { authDetails } from "./reducer/authSlice";
+import { BasicRoutesConfig, rolesConfig } from "./routes/Routes";
+import { ADMIN, USER } from "./utils/Constant";
+import Layout from "./components/layout/Layout";
 
 function App() {
-  return (    
-      <BrowserRouter>
-      <Navbar />
+  const { isAuthenticated, userRole } = useSelector(authDetails);
+  let routes;
+  if (isAuthenticated) {
+    if (userRole === USER) {
+      routes = rolesConfig["User"];
+    } else if (userRole === ADMIN) {
+      routes = rolesConfig["Admin"];
+    }
+  }
+  return (
+    <Suspense fallback={<Loader />}>
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/favourites" element={<Favourites />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/laptops" element={<Laptops />} />
-      <Route path="/entertainment" element={<Entertainment />} />
-      <Route path="/mobiles" element={<Mobiles />} />
+        {BasicRoutesConfig.map((route, key) => {
+          return route ? <Route key={key} {...route} /> : null;
+        })}
+
+        {isAuthenticated ? (
+          <Route element={<Layout />}>
+            {routes.routes.map((route, key) => {
+              return route ? <Route key={key} {...route} /> : null;
+            })}
+          </Route>
+        ) : (
+          <Route path="/base/*" element={<Navigate to="/" replace />} />
+        )}
       </Routes>
-      <Footer />
-      </BrowserRouter>      
+    </Suspense>
   );
 }
 

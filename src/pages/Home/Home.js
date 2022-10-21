@@ -1,7 +1,7 @@
 import React from 'react';
-import BrandCarausel from '../components/BrandCarausel';
-import HeroCarausel from '../components/HeroCarausel';
-import ProductCard from '../components/ProductCard';
+import BrandCarausel from '../../components/HeroSection/BrandCarausel';
+import HeroCarausel from '../../components/HeroSection/HeroCarausel';
+import ProductCard from '../../components/Cards/ProductCard';
 
 const Home = () => {
   return( 

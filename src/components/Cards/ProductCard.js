@@ -1,7 +1,7 @@
 import {React,useState,useEffect} from "react";
 import Card from "./Card";
 import axios from 'axios';
-import Loader from "../helper/Loader";
+import Loader from "../../helper/Loader";
 
 const ProductCard = () => {
   const [data, setData] = useState([]);

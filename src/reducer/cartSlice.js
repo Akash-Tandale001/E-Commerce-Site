@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     itemList:[]
-
 }
 
 const cartSlice = createSlice({
@@ -18,7 +17,6 @@ const cartSlice = createSlice({
             if (index > -1) {
                 state.itemList.splice(index, 1);
               }
-            //   state.itemList.filter((item)=>item.id!=action.payload.id);
         }    
     }
 });

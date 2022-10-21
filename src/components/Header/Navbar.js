@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {FaRegUser} from "react-icons/fa"
 
 const Navbar = () => {
   return (
@@ -79,6 +80,15 @@ const Navbar = () => {
                   aria-label="show notifications"
                 >
                   <i className="fab fa-opencart cursor-pointer"></i>
+                </button>
+              </Link>
+
+              <Link to="/profile">
+                <button
+                  className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
+                  aria-label="show notifications"
+                >
+                  <FaRegUser/>
                 </button>
               </Link>
             </div>

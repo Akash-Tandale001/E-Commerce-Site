@@ -1,7 +1,7 @@
 import React, { useState ,useEffect } from "react";
-import Card from "../components/Card";
+import Card from "../../components/Cards/Card";
 import axios from "axios";
-import Loader from "../helper/Loader";
+import Loader from "../../helper/Loader";
 
 const Laptops = () => {
  
