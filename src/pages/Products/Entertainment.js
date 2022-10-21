@@ -29,7 +29,7 @@ const Entertainment = () => {
       </div>
       <div className="flex flex-row overflow-x-auto  flex-wrap justify-center">
         {data.map((value) => (
-          <Card value={value} />
+          <Card value={value} key={value.id} />
         ))}
       </div>
     </div>

@@ -1,8 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {FaRegUser} from "react-icons/fa"
+import { useDispatch } from "react-redux";
+import { deleteAuth } from "../../reducer/authSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout=async()=>{
+    await dispatch(deleteAuth())
+    navigate("/");
+
+  }
   return (
     <nav className="bg-white shadow dark:bg-gray-800 container-fluid">
       <div className="container px-6 py-4 mx-auto">
@@ -12,7 +21,7 @@ const Navbar = () => {
               <p
                 className="text-xl  text-gray-800 transition-colors duration-200 transform dark:text-white  hover:text-gray-700 dark:hover:text-gray-300"                
               >
-                <i className="fas fa-angle-double-right cursor-pointer" >Product Catelog</i>
+                <i className="fas fa-angle-double-right cursor-pointer" > OneLand</i>
               </p>
             </div>
 
@@ -91,6 +100,13 @@ const Navbar = () => {
                   <FaRegUser/>
                 </button>
               </Link>
+                <button
+                  className=" mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
+                  aria-label="show notifications"
+                  onClick={handleLogout}
+                >
+                  LogOut
+                </button>
             </div>
           </div>
         </div>

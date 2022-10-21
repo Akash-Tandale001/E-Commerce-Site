@@ -3,9 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletefav, selectfavList } from "../reducer/favSlice";
 import { saveitem } from "../reducer/cartSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { json } from "react-router";
 
 const Favourites = () => {
-  let favlist = useSelector(selectfavList);
+  const list = useSelector(selectfavList)
+  // console.log(JSON.parse(sessionStorage.getItem("favList")))
+  // debugger
+  // let favlist = list.length !== 0 ? list : JSON.parse(sessionStorage.getItem("favList"))||[];
   const dispatch = useDispatch();
   const addcart = (id, name, imageurl, price) => {
     dispatch(
@@ -16,14 +20,13 @@ const Favourites = () => {
         price,
       })
     );
-    alert("Your " + name + " is added to cart succesfully .");
+    removefav(id)
   };
   const removefav = (id) => {
     dispatch(deletefav(id));
-    alert("Item removed from favourite section succesfully .");
   };
 
-  const favitem = favlist.map((value) => (
+  const favitem = list.map((value) => (
     <Draggable 
       draggableId={value.id}
       key={value.id}
@@ -67,10 +70,10 @@ const Favourites = () => {
 
   const dragend=(res)=>{
     console.log(res)
-    const items = [...favlist];
+    const items = [...list];
     const [ordereditems] = items.splice(res.source.index , 1)
     items.splice(res.destination.index,0,ordereditems);
-    favlist=items;
+    list=items;
   }
 
   return (

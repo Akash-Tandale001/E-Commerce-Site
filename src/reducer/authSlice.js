@@ -11,13 +11,16 @@ const authSlice = createSlice({
     },
     reducers: {
         saveAuth: (state,action) => {
-            // state = action.payload;
             state = {
                 isAuthenticated: action.payload.isAuthenticated,
                 userRole : action.payload.userRole,
                 token : action.payload.token
             }
             sessionStorage.setItem("loginToken", action.payload.token)
+            sessionStorage.setItem("isAuthenticated", action.payload.isAuthenticated)
+            sessionStorage.setItem("userRole", action.payload.userRole)
+            sessionStorage.setItem("favList", [])
+            sessionStorage.setItem("cartList", [])
             return state;
         },
         deleteAuth:(state,action)=>{
@@ -26,6 +29,8 @@ const authSlice = createSlice({
                 userType : "",
                 token : ""
             }
+            sessionStorage.clear()
+            return state
         }
     }
 });

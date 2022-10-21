@@ -54,6 +54,7 @@ const Login = () => {
         })
       );
 
+    sessionStorage.setItem("userName", loginDetails.userName)
       // navigate("/base/home")
       setLoading(false);
     } catch (error) {
