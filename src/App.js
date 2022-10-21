@@ -3,10 +3,10 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar"
 import About from "./pages/About";
 import Cart from "./pages/Cart";
-import Discount from "./pages/Discount";
 import Entertainment from "./pages/Entertainment";
 import Favourites from "./pages/Favourites";
 import Home from './pages/Home';
+import Laptops from "./pages/Laptops";
 import Mobiles from "./pages/Mobiles";
 
 
@@ -19,7 +19,7 @@ function App() {
       <Route path="/favourites" element={<Favourites />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/about" element={<About />} />
-      <Route path="/laptops" element={<Discount />} />
+      <Route path="/laptops" element={<Laptops />} />
       <Route path="/entertainment" element={<Entertainment />} />
       <Route path="/mobiles" element={<Mobiles />} />
       </Routes>
