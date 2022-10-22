@@ -7,6 +7,7 @@ import { BasicRoutesConfig, rolesConfig } from "./routes/Routes";
 import { ADMIN, USER } from "./utils/Constant";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home/Home";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { isAuthenticated, userRole,token } = useSelector(state => state.authDetails);
