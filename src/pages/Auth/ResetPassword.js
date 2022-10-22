@@ -11,11 +11,48 @@ import { authDetails, saveAuth } from "../../reducer/authSlice";
 
 const ResetPassword = () => {
   const [loading, setLoading] = useState(false);
-  const handleLogin=()=>{
-
+  const [passwordDetails, setPasswordDetails] = useState({
+    email:"",
+    password:"",
+    confirmPassword:""
+  });
+  const navigate = useNavigate();
+  const handleLogin=async()=>{
+    try {
+      if(passwordDetails.email !== "" && passwordDetails.password !== "" && passwordDetails.confirmPassword !== ""){
+        setLoading(true);
+        const loginstatus = await axios.put(
+          "https://ecommerceserver-ten.vercel.app/api/auth/forgotPassword",
+          passwordDetails
+        );
+        showToastMessage("success","Password changed Successfully")
+        navigate("/")
+      setLoading(false);
+      }
+     
+    } catch (error) {
+      setLoading(false);
+    }
   }
-  const handleOnchange=()=>{
-
+  const handleOnchange=(e)=>{
+    const name = e.target.name;
+    const value = e.target.value;
+    if (name === "email") {
+      setPasswordDetails((pre) => ({
+        ...pre,
+        email: value,
+      }));
+    } else if(name === 'password') {
+      setPasswordDetails((pre) => ({
+        ...pre,
+        password: value,
+      }));
+    }else{
+      setPasswordDetails((pre) => ({
+        ...pre,
+        confirmPassword: value,
+      }));
+    }
   }
   return (
     <>
@@ -45,7 +82,7 @@ const ResetPassword = () => {
               id="standard-basic"
               label="Confirm Password"
               variant="standard"
-              name="confirmPasswordpassword"
+              name="confirmPassword"
               type="password"
               onChange={handleOnchange}
             />
