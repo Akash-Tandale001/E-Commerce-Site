@@ -24,6 +24,7 @@ const SignUp = () => {
     message: "Enter valid Email",
   });
 showToastMessage("error","hellow")
+const navigate = useNavigate();
   const handleOnchange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -74,6 +75,8 @@ showToastMessage("error","hellow")
     console.log(loginstatus.data.status)
       if(loginstatus.data.status === "success"){
         showToastMessage("success",loginstatus.data.message)
+        setLoading(false);
+        navigate("/")
 
       }else{
         showToastMessage("error","failed to signup")
