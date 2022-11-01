@@ -93,7 +93,8 @@ const ResetPassword = () => {
               <Link to="/"
                 className={classes["register"]}
               >
-                Login
+                <Button variant="contained">Login</Button>
+                
               </Link>
             </div>
           </div>

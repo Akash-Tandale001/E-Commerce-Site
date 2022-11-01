@@ -5,7 +5,7 @@ import App from "./App";
 import store from "./store";
 import "tw-elements";
 import { Provider } from "react-redux";
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.min.css';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 

@@ -8,12 +8,15 @@ import axios from "axios";
 import SignUp from "./SignUp";
 import { useDispatch, useSelector } from "react-redux";
 import { authDetails, saveAuth } from "../../reducer/authSlice";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isAuthenticated, userRole } = useSelector(state => state.authDetails);
-  console.log("login",{ isAuthenticated, userRole })
+  const { isAuthenticated, userRole } = useSelector(
+    (state) => state.authDetails
+  );
+  console.log("login", { isAuthenticated, userRole });
   const [loginDetails, SetLoginDetails] = useState({
     userName: "",
     password: "",
@@ -45,24 +48,25 @@ const Login = () => {
         "https://ecommerceserver-ten.vercel.app/api/auth/login",
         loginDetails
       );
-   
+
       await dispatch(
         saveAuth({
-          isAuthenticated : true,
-          userRole : loginstatus.data.userType,
-          token : loginstatus.data.token
+          isAuthenticated: true,
+          userRole: loginstatus.data.userType,
+          token: loginstatus.data.token,
         })
       );
-      showToastMessage("success","LOgin Successfully")
+      showToastMessage("success", "Login Successfully");
 
-    sessionStorage.setItem("userName", loginDetails.userName)
+      sessionStorage.setItem("userName", loginDetails.userName);
       // navigate("/base/home")
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      alert("Invalid Cridential");
+      showToastMessage("error", "Invalid Cridential");
     }
   };
-
   const handleLogin = async () => {
     if (userNameError.status) {
       getLogin();
@@ -70,55 +74,84 @@ const Login = () => {
       showToastMessage("error", "Please provide valid credential");
     }
   };
-  
+  const demologin=async()=>{
+    try {
+      setLoading(true);
+      const loginstatus = await axios.post(
+        "https://ecommerceserver-ten.vercel.app/api/auth/login",
+        {
+          userName: "demo",
+          password: "demo",
+        }
+      );
+
+      await dispatch(
+        saveAuth({
+          isAuthenticated: true,
+          userRole: loginstatus.data.userType,
+          token: loginstatus.data.token,
+        })
+      );
+      showToastMessage("success", "Login Successfully");
+
+      sessionStorage.setItem("userName","demo");
+      // navigate("/base/home")
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      alert("Invalid Cridential");
+      showToastMessage("error", "Invalid Cridential");
+    }
+  }
+
   return (
     <>
       <div className={classes["main"]}>
-        {loading ? <Loader /> : (isAuthenticated === true) ? navigate("/base/home") : <>
-        
-        
-        
-        <div className={classes["conteiner"]}></div>
-          <div className={classes["loginContainer"]}>
-            <div className={classes["title"]}>Welcome to OneLand Store</div>
-            <TextField
-              id="standard-basic"
-              label="UserName"
-              variant="standard"
-              name="username"
-              color="success"
-              helperText={userNameError.status ? userNameError.message : ""}
-              error={userNameError.status}
-              onChange={handleOnchange}
-            />
-            <TextField
-              id="standard-basic"
-              label="Password"
-              variant="standard"
-              name="password"
-              type="password"
-              onChange={handleOnchange}
-            />
-            <Button variant="contained" onClick={handleLogin}>
-              Login
-            </Button>
-            <div>
-              <Link to="/signup"
-                className={classes["register"]}
-              >
-                Register
-              </Link>
+        {loading ? (
+          <Loader />
+        ) : isAuthenticated === true ? (
+          navigate("/base/home")
+        ) : (
+          <>
+            <div className={classes["conteiner"]}></div>
+            <div className={classes["loginContainer"]}>
+              <div className={classes["title"]}>Welcome to MobiSale Store</div>
+              <TextField
+                id="standard-basic"
+                label="UserName"
+                variant="standard"
+                name="username"
+                color="success"
+                onChange={handleOnchange}
+              />
+              <TextField
+                id="standard-basic"
+                label="Password"
+                variant="standard"
+                name="password"
+                type="password"
+                onChange={handleOnchange}
+              />
+              <Button variant="contained" onClick={handleLogin}>
+                Login
+              </Button>
+              <Button variant="contained" onClick={demologin}>
+                demo login
+              </Button>
+              <div>
+                <Link to="/signup" className={classes["register"]} >
+                  <Button variant="contained" className="w-30">Register</Button>
+                </Link>
+              </div>
+              <div>
+                <Link to="/reset-password" className={classes["register"]}>
+                <Button variant="contained" className="w-30">ForgotPassword</Button>
+                  
+                </Link>
+              </div>
             </div>
-            <div>
-              <Link to="/reset-password"
-                className={classes["register"]}
-              >
-                ForgotPassword
-              </Link>
-            </div>
-          </div>
           </>
-}
+        )}
       </div>
     </>
   );
