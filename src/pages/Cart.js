@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectitemList } from "../reducer/cartSlice";
@@ -7,7 +8,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const removeitem = (id,index) => {
     dispatch(deleteitem(id));
-    settotalCost(Cost => Cost-parseInt(list[index].price.replaceAll(",", "")))
+    settotalCost(Cost => Cost-parseInt(list[index].price.replaceAll(",", ""))*list[index].quantity)
     alert("Item removed to cart succesfully .");
   };
   const itemList = useSelector(selectitemList)
@@ -35,7 +36,19 @@ const Cart = () => {
   }
 
   const checkout=async()=>{
-    console.log("checkout")
+    console.log("checkout");
+    const res = await axios.post(
+      "https://ecommerceserver-ten.vercel.app/api/auth/create-checkout-session",
+      { userName: sessionStorage.getItem("userName"),
+      list
+    }
+    );
+    if(res.data.url){
+      window.location.href=res.data.url;
+    }
+    else{
+      window.alert("Error in processing your request");
+    }
   }
 
   // const itemlist = list.length !== 0 ?  list : JSON.parse(sessionStorage.getItem("cartList"))||[];
