@@ -18,6 +18,7 @@ const favSlice = createSlice({
         imageurl: action.payload.imageurl,
         name: action.payload.name,
         price: action.payload.price,
+        quantity:1
       });
       sessionStorage.setItem("favList", JSON.stringify(favListItem)) 
        
@@ -32,6 +33,16 @@ const favSlice = createSlice({
       if (index > -1) {
         state.favList.splice(index, 1);
       }
+      const cartListItem = sessionStorage.getItem("favList")
+      ? JSON.parse(sessionStorage.getItem("favList"))
+      : [{}];
+      const indexs = cartListItem.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (indexs > -1) {
+        cartListItem.splice(indexs, 1);
+      }
+    sessionStorage.setItem("favList", JSON.stringify(cartListItem));
     },
   },
 });

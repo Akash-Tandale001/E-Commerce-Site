@@ -14,6 +14,7 @@ const Card = ({ value }) => {
         name: value.name,
         imageurl: value.imageurl,
         price: value.price,
+        quantity:1,
       })
     );
     alert("Your " + value.name + " is added to cart succesfully .");
@@ -26,6 +27,7 @@ const Card = ({ value }) => {
         name: value.name,
         imageurl: value.imageurl,
         price: value.price,
+        quantity:1,
       })
     );
     alert(

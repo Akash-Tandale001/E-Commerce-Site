@@ -19,8 +19,8 @@ const authSlice = createSlice({
             sessionStorage.setItem("loginToken", action.payload.token)
             sessionStorage.setItem("isAuthenticated", action.payload.isAuthenticated)
             sessionStorage.setItem("userRole", action.payload.userRole)
-            sessionStorage.setItem("favList", [])
-            sessionStorage.setItem("cartList", [])
+            sessionStorage.setItem("favList", JSON.stringify([]))
+            sessionStorage.setItem("cartList", JSON.stringify([]))
             return state;
         },
         deleteAuth:(state,action)=>{

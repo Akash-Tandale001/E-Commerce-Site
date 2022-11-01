@@ -6,7 +6,11 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { json } from "react-router";
 
 const Favourites = () => {
-  const list = useSelector(selectfavList)
+  const itemList = useSelector(selectfavList)
+  var saveditem = sessionStorage.getItem("favList");
+  saveditem = (saveditem) ? JSON.parse(saveditem) : [];  
+  //const saveditem = sessionStorage.getItem("favList") === null ? JSON.parse(sessionStorage.getItem("favList")) : []
+  const list = itemList.length=== 0 ?  saveditem: itemList;
   // console.log(JSON.parse(sessionStorage.getItem("favList")))
   // debugger
   // let favlist = list.length !== 0 ? list : JSON.parse(sessionStorage.getItem("favList"))||[];
@@ -18,63 +22,73 @@ const Favourites = () => {
         name,
         imageurl,
         price,
+        quantity:1,
       })
     );
-    removefav(id)
+    removefav(id);
   };
   const removefav = (id) => {
     dispatch(deletefav(id));
   };
 
   const favitem = list.map((value) => (
-    <Draggable 
-      draggableId={value.id}
-      key={value.id}
-      index={value.id}
-    >{(provided)=>(
+    <Draggable draggableId={value.id} key={value.id} index={value.id}>
+      {(provided) => (
+        <div
+          className="p-4 m-4 items-center h-90% border-8 shadow-md rounded max-w-80% max-h-80%"
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+        >
+          <div className="flex flex-col md:flex-row  w-50% justify-between  p-6 rounded-lg shadow-lg bg-white ">
+           <div>
+           <i
+              className="fas fa-trash p-4 cursor-pointer"
+              onClick={() => removefav(value.id)}
+            ></i>
+           </div>
+           <div>
+              <img
+                src={value.imageurl}
+                className="m-auto md:m-2"
+                style={{ height: "8rem", width: "8rem" }}
+                alt="..."
+              />
+            </div>
+            <div className="w-80">
+              <h5 className="text-gray-900 p-2 text-xl font-medium mb-2 ">
+                {value.name}
+              </h5>
+            </div>
+            <div>
+              <p className="text-gray-700 text-2xl mb-4">₹ {value.price}</p>
+            </div>
+            <div>
+              <button
+                type="button"
+                className="w-30  p-4 bg-blue-600 text-white font-medium text-xs uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                onClick={() =>
+                  addcart(value.id, value.name, value.imageurl, value.price)
+                }
+              >
+                Move to cart
+              </button>
+            </div>
 
-      <div className="p-4 m-4 items-center h-90% border-8 shadow-md rounded max-w-80% max-h-80%" 
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        ref={provided.innerRef}
-      >
-        <div className="flex flex-col md:flex-row  w-50% justify-between  p-6 rounded-lg shadow-lg bg-white ">
-          <i
-            className="fas fa-trash p-4 cursor-pointer"
-            onClick={() => removefav(value.id)}
-          ></i>
-          <img
-            src={value.imageurl}
-            className="m-auto md:m-2"
-            style={{ height: "5rem", width: "5rem" }}
-            alt="..."
-          />
-          <h5 className="text-gray-900 p-4 text-xl font-medium mb-2">
-            {value.name}
-          </h5>
-          <p className="text-gray-700  text-2xl mb-4">{value.price}</p>
-          <button
-            type="button"
-            className="  p-4 bg-blue-600 text-white font-medium text-xs uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            onClick={() =>
-              addcart(value.id, value.name, value.imageurl, value.price)
-            }
-          >
-            Move to cart
-          </button>
+            
+          </div>
         </div>
-      </div>
-    )}
+      )}
     </Draggable>
   ));
 
-  const dragend=(res)=>{
-    console.log(res)
+  const dragend = (res) => {
+    console.log(res);
     const items = [...list];
-    const [ordereditems] = items.splice(res.source.index , 1)
-    items.splice(res.destination.index,0,ordereditems);
-    list=items;
-  }
+    const [ordereditems] = items.splice(res.source.index, 1);
+    items.splice(res.destination.index, 0, ordereditems);
+    list = items;
+  };
 
   return (
     <>

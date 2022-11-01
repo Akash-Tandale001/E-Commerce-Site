@@ -85,6 +85,7 @@ const navigate = useNavigate();
       setLoading(false);
     } catch (error) {
       console.log(error.response.data.error);      
+      alert("User already exist")
         showToastMessage("error", error.response.data.error);
         setLoading(false);
     }
@@ -130,8 +131,8 @@ const navigate = useNavigate();
               variant="standard"
               name="username"
               color="success"
-              helperText={userNameError.status ? userNameError.message : ""}
-              error={userNameError.status}
+              // helperText={userNameError.status ? userNameError.message : ""}
+              // error={userNameError.status}
               onChange={handleOnchange}
             />
             <TextField
@@ -140,8 +141,8 @@ const navigate = useNavigate();
               variant="standard"
               name="email"
               color="success"
-              helperText={emailError.status ? emailError.message : ""}
-              error={emailError.status}
+              // helperText={emailError.status ? emailError.message : ""}
+              // error={emailError.status}
               onChange={handleOnchange}
             />
           </div>
@@ -175,7 +176,7 @@ const navigate = useNavigate();
           </div>
           <div>
             <Link to="/" className={classes["register"]}>
-              Login
+            <Button variant="contained">Login</Button>              
             </Link>
           </div>
         </div>
