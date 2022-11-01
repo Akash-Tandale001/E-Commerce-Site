@@ -1,4 +1,6 @@
 import React from "react";
+const Fail = React.lazy(() => import("../pages/Checkout/Fail"));
+const Sucess = React.lazy(() => import("../pages/Checkout/Sucess"));
 
 const Home = React.lazy(() => import("../pages/Home/Home"));
 const About = React.lazy(() => import("../pages/Home/About"));
@@ -79,6 +81,16 @@ const components = {
 		name: "SignUp",
 		element: <SignUp />,
 	},
+	PaymentSucess:{
+		path: "/base/checkout-sucess",
+		name: "sucess",
+		element: <Sucess/>,
+	},
+	PaymentFail:{
+		path: "/base/checkout-fail",
+		name: "fail",
+		element: <Fail />,
+	}
 };
 const rolesConfig = {
 	Admin: {
@@ -92,6 +104,8 @@ const rolesConfig = {
             components.Mobiles,
             components.Entertainment,
             components.AdminDashBoard,
+			components.PaymentFail,
+			components.PaymentSucess,
 		],
 	},
 	user: {
@@ -104,6 +118,8 @@ const rolesConfig = {
             components.Laptops,
             components.Mobiles,
             components.Entertainment,
+			components.PaymentFail,
+			components.PaymentSucess,
         ],
 	},
 };
