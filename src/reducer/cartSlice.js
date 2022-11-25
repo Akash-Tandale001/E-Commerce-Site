@@ -24,7 +24,7 @@ const cartSlice = createSlice({
       sessionStorage.setItem("cartList", JSON.stringify(cartListItem));
     },
     additem: (state, action) => {
-      //state.itemList[action.payload].quantity++;
+      state.itemList[action.payload].quantity++;
 
       const cartListItem = sessionStorage.getItem("cartList")
         ? JSON.parse(sessionStorage.getItem("cartList"))
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
       sessionStorage.setItem("cartList", JSON.stringify(cartListItem));
     },
     subtratitem: (state, action) => {
-      //state.itemList[action.payload].quantity--;
+      state.itemList[action.payload].quantity--;
 
       const cartListItem = sessionStorage.getItem("cartList")
         ? JSON.parse(sessionStorage.getItem("cartList"))
