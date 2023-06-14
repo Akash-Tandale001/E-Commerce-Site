@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectitemList } from "../reducer/cartSlice";
 import { deleteitem, additem, subtratitem } from "../reducer/cartSlice";
-import toast, { Toaster }  from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -48,9 +48,14 @@ const Cart = () => {
 
   const checkout = async () => {
     console.log("checkout");
+    let axiosConfig = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
+    };
     const res = await axios.post(
       "https://ecommerceserver-ten.vercel.app/api/auth/create-checkout-session",
-      { userName: sessionStorage.getItem("userName"), list }
+      { userName: sessionStorage.getItem("userName"), list },axiosConfig
     );
     if (res.data.url) {
       window.location.href = res.data.url;
@@ -142,7 +147,7 @@ const Cart = () => {
         );
       })}
       {/* <div>{totalcost}</div> */}
-      <Toaster/>
+      <Toaster />
     </>
   );
 };
