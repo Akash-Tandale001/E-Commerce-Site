@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { showToastMessage } from "../../utils/ShowToastMessage";
 import Loader from "../../helper/Loader";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
   const [signupDetails, SetSignupDetails] = useState({
@@ -23,8 +24,8 @@ const SignUp = () => {
     status: true,
     message: "Enter valid Email",
   });
-showToastMessage("error","hellow")
-const navigate = useNavigate();
+  showToastMessage("error", "hellow")
+  const navigate = useNavigate();
   const handleOnchange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -33,35 +34,35 @@ const navigate = useNavigate();
         ...pre,
         userName: value,
       }));
-    } else if(name === "email") {
+    } else if (name === "email") {
       SetSignupDetails((pre) => ({
         ...pre,
         email: value,
-      }));      
+      }));
     }
-    else if(name === "firstName") {
+    else if (name === "firstName") {
       SetSignupDetails((pre) => ({
         ...pre,
         firstName: value,
-      }));      
+      }));
     }
-    else if(name === "lastName") {
+    else if (name === "lastName") {
       SetSignupDetails((pre) => ({
         ...pre,
         lastName: value,
-      }));      
+      }));
     }
-    else if(name === "password") {
+    else if (name === "password") {
       SetSignupDetails((pre) => ({
         ...pre,
         password: value,
-      }));      
+      }));
     }
-    else if(name === "matchingPassword") {
+    else if (name === "matchingPassword") {
       SetSignupDetails((pre) => ({
         ...pre,
         matchingPassword: value,
-      }));      
+      }));
     }
   };
   const [loading, setLoading] = useState(false);
@@ -72,22 +73,21 @@ const navigate = useNavigate();
         "https://ecommerceserver-ten.vercel.app/api/auth/createStartupUser",
         signupDetails
       );
-    console.log(loginstatus.data.status)
-      if(loginstatus.data.status === "success"){
-        showToastMessage("success",loginstatus.data.message)
+      console.log(loginstatus.data.status)
+      if (loginstatus.data.status === "success") {
+        toast.success(loginstatus.data.message)
+        // showToastMessage("success", loginstatus.data.message)
         setLoading(false);
         navigate("/")
 
-      }else{
-        showToastMessage("error","failed to signup")
+      } else {
+        showToastMessage("error", "failed to signup")
       }
 
       setLoading(false);
     } catch (error) {
-      console.log(error.response.data.error);      
-      alert("User already exist")
-        showToastMessage("error", error.response.data.error);
-        setLoading(false);
+      toast.error(error.response.data.error)
+      setLoading(false);
     }
   };
 
@@ -166,21 +166,36 @@ const navigate = useNavigate();
             />
           </div>
           <div className={classes["btnContainer"]}>
-            <Button
+            {/* <Button
               className={classes["btn"]}
               variant="contained"
               onClick={handleSignup}
             >
               Signup
-            </Button>
+            </Button> */}
+            <div className="w-full">
+              <div className="flex-1 h-full w-56 mx-auto cursor-pointer" onClick={handleSignup}>
+                <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8">
+                  <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">Signup</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div>
-            <Link to="/" className={classes["register"]}>
-            <Button variant="contained">Login</Button>              
-            </Link>
+            <div className="w-full">
+              <div className="flex-1 h-full w-56 mx-auto cursor-pointer" >
+                <Link to="/" className={classes["register"]}>
+                  <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8">
+                    <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">Login</p>
+                  </div>
+                  {/* <Button variant="contained">Login</Button> */}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <Toaster/>
     </>
   );
 };

@@ -10,7 +10,6 @@ const Navbar = () => {
   const handleLogout=async()=>{
     await dispatch(deleteAuth())
     navigate("/");
-
   }
   return (
     <nav className="bg-white shadow dark:bg-gray-800 container-fluid">

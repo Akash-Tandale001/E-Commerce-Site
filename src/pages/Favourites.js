@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deletefav, selectfavList } from "../reducer/favSlice";
+import { addfav, deletefav, selectfavList } from "../reducer/favSlice";
 import { saveitem } from "../reducer/cartSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { json } from "react-router";
@@ -8,26 +8,28 @@ import { json } from "react-router";
 const Favourites = () => {
   const itemList = useSelector(selectfavList)
   var saveditem = sessionStorage.getItem("favList");
-  saveditem = (saveditem) ? JSON.parse(saveditem) : [];  
+  saveditem = (saveditem) ? JSON.parse(saveditem) : [];
   //const saveditem = sessionStorage.getItem("favList") === null ? JSON.parse(sessionStorage.getItem("favList")) : []
-  const list = itemList.length=== 0 ?  saveditem: itemList;
+  const list = itemList.length === 0 ? saveditem : itemList;
   // console.log(JSON.parse(sessionStorage.getItem("favList")))
   // debugger
   // let favlist = list.length !== 0 ? list : JSON.parse(sessionStorage.getItem("favList"))||[];
   const dispatch = useDispatch();
   const addcart = (id, name, imageurl, price) => {
-    dispatch(
-      saveitem({
-        id,
-        name,
-        imageurl,
-        price,
-        quantity:1,
-      })
+   
+    dispatch(      
+        saveitem({
+          id,
+          name,
+          imageurl,
+          price,
+          quantity: 1,
+        })
     );
     removefav(id);
   };
   const removefav = (id) => {
+    console.log("asdas")
     dispatch(deletefav(id));
   };
 
@@ -41,13 +43,13 @@ const Favourites = () => {
           ref={provided.innerRef}
         >
           <div className="flex flex-col md:flex-row  w-50% justify-between  p-6 rounded-lg shadow-lg bg-white ">
-           <div>
-           <i
-              className="fas fa-trash p-4 cursor-pointer"
-              onClick={() => removefav(value.id)}
-            ></i>
-           </div>
-           <div>
+            <div>
+              <i
+                className="fas fa-trash p-4 cursor-pointer"
+                onClick={() => removefav(value.id)}
+              ></i>
+            </div>
+            <div>
               <img
                 src={value.imageurl}
                 className="m-auto md:m-2"
@@ -75,7 +77,7 @@ const Favourites = () => {
               </button>
             </div>
 
-            
+
           </div>
         </div>
       )}

@@ -20,10 +20,17 @@ const favSlice = createSlice({
         price: action.payload.price,
         quantity:1
       });
-      sessionStorage.setItem("favList", JSON.stringify(favListItem)) 
-       
+      sessionStorage.setItem("favList", JSON.stringify(favListItem))     
       
     
+    },
+    addfav: (state,action)=>{
+      state.favList[action.payload].quantity++;
+      const favListItem = sessionStorage.getItem("favList")
+        ? JSON.parse(sessionStorage.getItem("favList"))
+        : [];
+        favListItem[action.payload].quantity++;
+        sessionStorage.setItem("favList", JSON.stringify(favListItem))  
     },
 
     deletefav: (state, action) => {
@@ -47,6 +54,6 @@ const favSlice = createSlice({
   },
 });
 
-export const { savefav, deletefav } = favSlice.actions;
+export const { savefav, deletefav,addfav } = favSlice.actions;
 export const selectfavList = (state) => state.fav.favList;
 export default favSlice.reducer;

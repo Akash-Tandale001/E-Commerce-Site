@@ -74,7 +74,7 @@ const Login = () => {
       showToastMessage("error", "Please provide valid credential");
     }
   };
-  const demologin=async()=>{
+  const demologin = async () => {
     try {
       setLoading(true);
       const loginstatus = await axios.post(
@@ -94,7 +94,7 @@ const Login = () => {
       );
       showToastMessage("success", "Login Successfully");
 
-      sessionStorage.setItem("userName","demo");
+      sessionStorage.setItem("userName", "demo");
       // navigate("/base/home")
       setLoading(false);
     } catch (error) {
@@ -132,22 +132,56 @@ const Login = () => {
                 type="password"
                 onChange={handleOnchange}
               />
-              <Button variant="contained" onClick={handleLogin}>
+              {/* <Button variant="contained" onClick={handleLogin}>
                 Login
               </Button>
               <Button variant="contained" onClick={demologin}>
                 demo login
-              </Button>
+              </Button> */}
+              <div className="flex">
+                <div className="w-full">
+                  <div className="flex-1 h-full w-56 mx-auto cursor-pointer" onClick={handleLogin}>
+                    <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8">
+                      <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">Login</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-3/4">
+                  <div className="flex-1 h-full w-56 mx-auto cursor-pointer" onClick={demologin}>
+                    <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8">
+                      <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">Demo Login</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
               <div>
-                <Link to="/signup" className={classes["register"]} >
-                  <Button variant="contained" className="w-30">Register</Button>
-                </Link>
+
+                <div className="w-full">
+                  <div className="flex-1 h-full w-96 mx-auto cursor-pointer">
+                    <Link to="/signup" className={classes["register"]} >
+                      <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8">
+                        <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">Register</p>
+                      </div>
+                      {/* <Button variant="contained" className="w-30">Register</Button> */}
+                    </Link>
+
+                    <Link to="/reset-password" className={classes["register"]}>
+                      <div className="flex w-full bg-blue-500 text-white shadow rounded-lg py-2 px-8 mt-4">
+                        <p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white-800">ForgotPassword</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </div>
               <div>
-                <Link to="/reset-password" className={classes["register"]}>
-                <Button variant="contained" className="w-30">ForgotPassword</Button>
-                  
-                </Link>
+
+                {/* <Button variant="contained" className="w-30">ForgotPassword</Button> */}
+
+
               </div>
             </div>
           </>

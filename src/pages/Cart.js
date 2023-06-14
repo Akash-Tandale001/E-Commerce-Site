@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectitemList } from "../reducer/cartSlice";
 import { deleteitem, additem, subtratitem } from "../reducer/cartSlice";
+import toast, { Toaster }  from 'react-hot-toast'
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Cart = () => {
         Cost -
         parseInt(list[index].price.replaceAll(",", "")) * list[index].quantity
     );
-    alert("Item removed to cart succesfully .");
+    toast.success("Item removed to cart succesfully .")
   };
   const itemList = useSelector(selectitemList);
   var saveditem = sessionStorage.getItem("cartList");
@@ -141,6 +142,7 @@ const Cart = () => {
         );
       })}
       {/* <div>{totalcost}</div> */}
+      <Toaster/>
     </>
   );
 };
